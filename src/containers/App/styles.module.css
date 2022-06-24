@@ -1,0 +1,41 @@
+.app {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.card {
+  flex: 7;
+}
+
+.nav, .header {
+  background-color: #d1ca7e;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  user-select: none;
+}
+
+.nav > span, .header > span {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.header > span {
+  padding: 0 10px 0 10px;
+}
+.header > span > select {
+  text-align: center;
+}
+
+
+
+.nav > span:active {
+  background-color: #e5e1b6
+}

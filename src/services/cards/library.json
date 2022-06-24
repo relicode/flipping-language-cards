@@ -1,0 +1,153 @@
+{
+  "contentRows": [
+    [
+      "False friends",
+      "Slum district",
+      "El suburbio",
+      "Slummi (Myymäki, Kontula)"
+    ],
+    [
+      "False friends",
+      "I have a cold.",
+      "Estoy constipado/a.",
+      "Mullo nuha."
+    ],
+    [
+      "False friends",
+      "I'm pregnant.",
+      "Estoy embarazada.",
+      "Oon paksun."
+    ],
+    [
+      "False friends",
+      "Insult",
+      "La injuria",
+      "Loukkaus"
+    ],
+    [
+      "False friends",
+      "Relatives",
+      "Los parientes",
+      "Sukulaiset"
+    ],
+    [
+      "False friends",
+      "Sensitive",
+      "Sensible",
+      "Arkaluontoinen"
+    ],
+    [
+      "To be",
+      "I am (ser)",
+      "Yo soy",
+      "Minä olen (ser)"
+    ],
+    [
+      "To be",
+      "You are (ser, sg. inf.)",
+      "Tú eres",
+      "Sinä olet (ser)"
+    ],
+    [
+      "To be",
+      "You are (ser, sg. for.)",
+      "Usted es",
+      "Te olette (ser)"
+    ],
+    [
+      "To be",
+      "He is (ser)",
+      "Él es",
+      "Hän on (m, ser)"
+    ],
+    [
+      "To be",
+      "She is (ser)",
+      "Ella es",
+      "Hän on (f, ser)"
+    ],
+    [
+      "To be",
+      "We are (ser)",
+      "Nosotros/as somos",
+      "Me olemme (ser)"
+    ],
+    [
+      "To be",
+      "You are (ser, pl. inf.)",
+      "Vosotros/as sois",
+      "Te olette (ser, inf.)"
+    ],
+    [
+      "To be",
+      "You are (ser, pl. for.)",
+      "Ustedes son",
+      "Te olette (ser, for.)"
+    ],
+    [
+      "To be",
+      "They are (ser)",
+      "Ellos / ellas son",
+      "He ovat (estar)"
+    ],
+    [
+      "To be",
+      "I am (ser)",
+      "Yo estoy",
+      "Minä olen (estar)"
+    ],
+    [
+      "To be",
+      "You are (ser, sg. inf.)",
+      "Tú estás",
+      "Sinä olet (estar)"
+    ],
+    [
+      "To be",
+      "You are (ser, sg. for.)",
+      "Usted está",
+      "Te olette (estar)"
+    ],
+    [
+      "To be",
+      "He is (ser)",
+      "El está",
+      "Hän on (m, estar)"
+    ],
+    [
+      "To be",
+      "She is (ser)",
+      "Ella está",
+      "Hän on (f, estar)"
+    ],
+    [
+      "To be",
+      "We are (ser)",
+      "Nosotros/as estamos",
+      "Me olemme (estar)"
+    ],
+    [
+      "To be",
+      "You are (ser, pl. inf.)",
+      "Vosotros/as esáis",
+      "Te olette (estar, inf.)"
+    ],
+    [
+      "To be",
+      "You are (ser, pl. for.)",
+      "Ustedes están",
+      "Te olette (estar, for.)"
+    ],
+    [
+      "To be",
+      "They are (ser)",
+      "Ellos /ellas están",
+      "He ovat (estar)"
+    ]
+  ],
+  "languages": [
+    "English",
+    "Spanish",
+    "Finnish"
+  ]
+}

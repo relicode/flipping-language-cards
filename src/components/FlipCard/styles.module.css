@@ -1,0 +1,14 @@
+.container {
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.card {
+  background-color: #eee8aa;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
