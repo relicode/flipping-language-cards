@@ -10,20 +10,19 @@ type AppState = {
   category: number,
   langFrom: number,
   langTo: number,
+  isFlipped: boolean,
   library: Library,
 }
 
 type SelectProp = keyof Pick<AppState, 'category' | 'langFrom' | 'langTo'>
 
 const App: React.FC = () => {
-  const [isFlipped, setIsFlipped] = useState(false)
-  const flipCard = () => { setIsFlipped(!isFlipped) }
-
   const [state, setState] = useState<AppState>({
     idx: 0,
     category: 0,
     langFrom: 0,
     langTo: 1,
+    isFlipped: false,
     library: {
       categoryRows: {
         languagePlaceholder: [['lang1', 'lang2', 'lang3']],
@@ -31,6 +30,13 @@ const App: React.FC = () => {
       languages: [],
     },
   })
+
+  const flipCard = (flipState?: boolean | React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    setState((prevState) => ({
+      ...prevState,
+      isFlipped: typeof flipState === 'boolean' ? flipState : !prevState.isFlipped
+    }))
+  }
 
   useEffect(() => {
     (async () => {
@@ -83,7 +89,7 @@ const App: React.FC = () => {
     <div className={styles.app}>
       <header className={styles.header}>
         <span>
-          <select defaultValue={category} onChange={(ev) => handleChange('category', ev.target.value)}>
+          <select value={category} onChange={(ev) => handleChange('category', ev.target.value)}>
             {categories.map(([cat], idx) => (
               <option
                 value={idx}
@@ -94,7 +100,7 @@ const App: React.FC = () => {
 
         </span>
         <span>
-          <select defaultValue={langFrom} onChange={(ev) => handleChange('langFrom', ev.target.value)}>
+          <select value={langFrom} onChange={(ev) => handleChange('langFrom', ev.target.value)}>
             {languages.map((lang, idx) => (
               <option
                 value={idx}
@@ -104,7 +110,7 @@ const App: React.FC = () => {
           </select>
         </span>
         <span>
-          <select defaultValue={langTo} onChange={(ev) => handleChange('langTo', ev.target.value)}>
+          <select value={langTo} onChange={(ev) => handleChange('langTo', ev.target.value)}>
             {languages.map((lang, idx) => (
               <option
                 value={idx}
@@ -116,7 +122,7 @@ const App: React.FC = () => {
       </header>
       <div className={styles.card}>
         <FlipCard
-          isFlipped={isFlipped}
+          isFlipped={state.isFlipped}
           text={[categoryCards[state.idx][langFrom], categoryCards[state.idx][langTo]]}
         />
       </div>
