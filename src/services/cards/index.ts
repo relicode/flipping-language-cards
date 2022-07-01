@@ -1,7 +1,7 @@
 import rawLibrary from './library.json'
 
 type RawLibrary = typeof rawLibrary
-export const fetchLibrary = () => new Promise<RawLibrary>((res) => res(rawLibrary))
+export const fetchRawLibrary = () => new Promise<RawLibrary>((res) => res(rawLibrary))
 
 type CategoryRows = Readonly<{ [key: string]: [string, string, string][] }>
 const getCategoryRows = (library: RawLibrary) => library.contentRows
@@ -15,14 +15,17 @@ const getCategoryRows = (library: RawLibrary) => library.contentRows
     }
   ), {})
 
-type Languages = Readonly<RawLibrary['languages']>
-const getLanguages = (library: RawLibrary): Languages => library.languages
+const getLanguages = (library: RawLibrary) => library.languages
 
 export type Library = {
   categoryRows: CategoryRows
-  languages: Languages
+  languages: ReturnType<typeof getLanguages>
 }
+
 export const librarySelector = (library: RawLibrary): Library => ({
   categoryRows: getCategoryRows(library),
   languages: getLanguages(library),
 })
+
+const fetchLibrary = () => fetchRawLibrary().then(((r) => librarySelector(r)))
+export default fetchLibrary
