@@ -1,19 +1,24 @@
 import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
 import App from './containers/App'
-import reportWebVitals from './reportWebVitals'
+import ReactDOM from 'react-dom/client'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('app') as HTMLElement
-)
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-)
+import './index.css'
+import fetchLibrary from './services/cards'
+// import reportWebVitals from './reportWebVitals'
+
+;(async () => {
+  const library = await fetchLibrary()
+  const root = document.getElementById('app')
+  if (root) {
+    ReactDOM.createRoot(root).render(
+      <StrictMode>
+        <App {...library} />
+      </StrictMode>
+    )
+  }
+})()
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+// reportWebVitals()
