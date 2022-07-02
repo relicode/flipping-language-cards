@@ -1,9 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import Modal from 'react-modal'
 
-import FlipCard from '../../components/FlipCard'
 import { Library } from '../../services/cards'
-
+import FlipCard from '../../components/FlipCard'
 import styles from './styles.module.css'
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+}
+
+export const appElementId = 'app'
+export const appElement = document.getElementById(appElementId)
 
 const shuffle = (unshuffled: [string, string, string][]) => unshuffled
   .map(value => ({ value, sort: Math.random() }))
@@ -44,8 +58,29 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
     setFlipped(false)
   }
 
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const afterOpenModal = () => { console.log('modal was opened') }
+
   return (
     <div className={styles.app}>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={() => setModalIsOpen(false)}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2>Hello</h2>
+        <button onClick={() => setModalIsOpen(false)}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
       <header className={styles.header}>
         <span>
           <select value={category} onChange={(ev) => handleNumericChange(setCategory, ev.target.value, true)}>
