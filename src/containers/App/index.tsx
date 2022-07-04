@@ -5,17 +5,6 @@ import { Library } from '../../services/cards'
 import FlipCard from '../../components/FlipCard'
 import styles from './styles.module.css'
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-}
-
 export const appElementId = 'app'
 export const appElement = document.getElementById(appElementId)
 
@@ -29,7 +18,7 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
   const [category, setCategory] = useState(0)
   const [langFrom, setLangFrom] = useState(0)
   const [langTo, setLangTo] = useState(1)
-  const [flipped, setFlipped] = useState(false)
+  const [flipped, setIsFlipped] = useState(false)
 
   const categories = Object.entries(categoryRows).sort()
   const [,categoryCardsInOrder] = categories[category]
@@ -43,22 +32,17 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
   const handleNumericChange = (setter: React.Dispatch<React.SetStateAction<number>>, value: string, resetIndex = false) => {
     if (resetIndex) {
       setIndex(0)
-      setFlipped(false)
+      setIsFlipped(false)
     }
     setter(parseInt(value, 10))
   }
 
   const navigateForward = () => {
     setIndex(index < categoryCards.length - 1 ? index + 1 : 0)
-    setFlipped(false)
+    setIsFlipped(false)
   }
 
-  const navigateBack = () => {
-    setIndex(index === 0 ? categoryCards.length - 1 : index - 1)
-    setFlipped(false)
-  }
-
-  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const afterOpenModal = () => { console.log('modal was opened') }
 
   return (
@@ -67,61 +51,56 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={() => setModalIsOpen(false)}
-        style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Settings"
       >
-        <h2>Hello</h2>
-        <button onClick={() => setModalIsOpen(false)}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <div className={styles.wrapper}>
+          <label>
+            <span>From:&nbsp;</span>
+            <select value={langFrom} onChange={(ev) => handleNumericChange(setLangFrom, ev.target.value)}>
+              {languages.map((lang, idx) => (
+                <option
+                  value={idx}
+                  key={lang}
+                >{lang}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>To:&nbsp;</span>
+            <select value={langTo} onChange={(ev) => handleNumericChange(setLangTo, ev.target.value)}>
+              {languages.map((lang, idx) => (
+                <option
+                  value={idx}
+                  key={lang}
+                >{lang}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>Category:<br /></span>
+            <select value={category} onChange={(ev) => handleNumericChange(setCategory, ev.target.value, true)}>
+              {categories.map(([cat], idx) => (
+                <option
+                  value={idx}
+                  key={cat}
+                >{cat}</option>
+              ))}
+            </select>
+          </label>
+          <div>
+            <button onClick={() => setModalIsOpen(false)}>Close</button>
+          </div>
+        </div>
       </Modal>
-      <header className={styles.header}>
-        <span>
-          <select value={category} onChange={(ev) => handleNumericChange(setCategory, ev.target.value, true)}>
-            {categories.map(([cat], idx) => (
-              <option
-                value={idx}
-                key={cat}
-              >{cat}</option>
-            ))}
-          </select>
-        </span>
-        <span>
-          <select value={langFrom} onChange={(ev) => handleNumericChange(setLangFrom, ev.target.value)}>
-            {languages.map((lang, idx) => (
-              <option
-                value={idx}
-                key={lang}
-              >{lang}</option>
-            ))}
-          </select>
-        </span>
-        <span>
-          <select value={langTo} onChange={(ev) => handleNumericChange(setLangTo, ev.target.value)}>
-            {languages.map((lang, idx) => (
-              <option
-                value={idx}
-                key={lang}
-              >{lang}</option>
-            ))}
-          </select>
-        </span>
-      </header>
       <div className={styles.card}>
         <FlipCard
+          onClick={() => setIsFlipped(!flipped)}
           isFlipped={flipped}
           text={[categoryCards[index][langFrom], categoryCards[index][langTo]]}
         />
       </div>
       <nav className={styles.nav}>
-        <span onClick={navigateBack}>ᐸ</span>
-        <span onClick={() => setFlipped(!flipped)}>↻</span>
+        <span onClick={() => setModalIsOpen(!modalIsOpen)}>⚙</span>
         <span onClick={navigateForward}>ᐳ</span>
       </nav>
     </div>

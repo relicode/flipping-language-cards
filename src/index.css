@@ -51,6 +51,11 @@ table {
 
 html, body, #app {
   height: 100%;
+  user-select: none;
+}
+
+button, select {
+	font-size: 36px;
 }
 
 body {

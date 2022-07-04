@@ -34,8 +34,18 @@
   text-align: center;
 }
 
-
-
 .nav > span:active {
   background-color: #e5e1b6
+}
+
+/* Modal */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.wrapper > label {
+  flex: 1;
 }

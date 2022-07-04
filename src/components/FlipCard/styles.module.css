@@ -1,3 +1,7 @@
+.wrapper {
+  height: 100%;
+}
+
 .container {
   align-items: center;
   height: 100%;
