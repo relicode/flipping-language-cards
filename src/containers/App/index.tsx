@@ -55,7 +55,7 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
       >
         <div className={styles.wrapper}>
           <label>
-            <span>From:&nbsp;</span>
+            <span>From:</span><br />
             <select value={langFrom} onChange={(ev) => handleNumericChange(setLangFrom, ev.target.value)}>
               {languages.map((lang, idx) => (
                 <option
@@ -66,7 +66,7 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
             </select>
           </label>
           <label>
-            <span>To:&nbsp;</span>
+            <hr /><span>To:</span><br />
             <select value={langTo} onChange={(ev) => handleNumericChange(setLangTo, ev.target.value)}>
               {languages.map((lang, idx) => (
                 <option
@@ -77,7 +77,7 @@ const App: React.FC<Library> = ({ categoryRows, languages }) => {
             </select>
           </label>
           <label>
-            <span>Category:<br /></span>
+            <hr /><span>Category:</span><br />
             <select value={category} onChange={(ev) => handleNumericChange(setCategory, ev.target.value, true)}>
               {categories.map(([cat], idx) => (
                 <option
