@@ -58,12 +58,12 @@ button, select {
   font-size: 24px;
 }
 
-select {
+select, button {
   appearance: none;
   cursor: pointer;
   margin-top: 10px;
-  padding: 30px 50px 30px 50px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 body {
