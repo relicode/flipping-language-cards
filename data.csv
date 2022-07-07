@@ -14,12 +14,50 @@ To be,We are (ser),Nosotros/as somos,Me olemme (ser)
 To be,"You are (ser, pl. inf.)",Vosotros/as sois,"Te olette (ser, inf.)"
 To be,"You are (ser, pl. for.)",Ustedes son,"Te olette (ser, for.)"
 To be,They are (ser),Ellos / ellas son,He ovat (estar)
-To be,I am (ser),Yo estoy,Minä olen (estar)
-To be,"You are (ser, sg. inf.)",Tú estás,Sinä olet (estar)
-To be,"You are (ser, sg. for.)",Usted está,Te olette (estar)
-To be,He is (ser),El está,"Hän on (m, estar)"
-To be,She is (ser),Ella está,"Hän on (f, estar)"
-To be,We are (ser),Nosotros/as estamos,Me olemme (estar)
-To be,"You are (ser, pl. inf.)",Vosotros/as esáis,"Te olette (estar, inf.)"
-To be,"You are (ser, pl. for.)",Ustedes están,"Te olette (estar, for.)"
-To be,They are (ser),Ellos /ellas están,He ovat (estar)
+To be,I am (estar),Yo estoy,Minä olen (estar)
+To be,"You are (estar, sg. inf.)",Tú estás,Sinä olet (estar)
+To be,"You are (estar, sg. for.)",Usted está,Te olette (estar)
+To be,He is (estar),El está,"Hän on (m, estar)"
+To be,She is (estar),Ella está,"Hän on (f, estar)"
+To be,We are (estar),Nosotros/as estamos,Me olemme (estar)
+To be,"You are (estar, pl. inf.)",Vosotros/as esáis,"Te olette (estar, inf.)"
+To be,"You are (estar, pl. for.)",Ustedes están,"Te olette (estar, for.)"
+To be,They are (estar),Ellos /ellas están,He ovat (estar)
+Shopping,Entrance,Entrada,Sisään(käynti)
+Shopping,Exit,Salida,Ulos(käynti)
+Shopping,Business hours,Horario de atención,Aukioloaika
+Shopping,Open,Abierto,Avoinna
+Shopping,Closed,Cerrado,Suljettu
+Shopping,Shop/store,Tienda,Kauppa
+Shopping,I would like one of those,Quisiera uno de esos,Haluaisin yhden tuollaisen
+Shopping,Give me...(inf.),Dame...,Anna minulle...(inf.)
+Shopping,Give me...(for.),Deme...,Anna minulle...(for.)
+Shopping,I want this/that,Quiero este(a) / ese(a),Haluan tämän/tuon
+Shopping,Cheap,Barato,Halpa
+Shopping,Affordable,Económico,Edullinen
+Shopping,GIve me the chepest one,Dame el más barato,Anna minulle halvin
+Shopping,Can you choose (for me) (for.),Puede elegir (para mí),Valitse sinä (minun puolestani) (for.)
+Shopping,How much is this?,Cuánto cuesta / vale?,Kuinka paljon tämä maksaa?
+Shopping,"Hey buddy, I know how the prices are.","Amigo, yo sé cómo son los precios.","Kaveri, tiedän kyllä mitä nämä maksavat."
+Essential phrases,How are you?,Cómo estás (for.) / Qué tal (inf.)?,Miten voit / mitä kuuluu?
+Essential phrases,Do you speak english?,Hablas inglés?,Puhutko englantia?
+Essential phrases,I don't know,No sé,En tiedä
+Essential phrases,What's up?,Qué pasa?,Miten menee?
+Essential phrases,Let's see,A ver,Nähdään (mitä tapahtuu)
+Essential phrases,Really?,De verdad?,Todellako?
+Essential phrases,No problem,No hay problema,Ei ongelmaa
+Essential phrases,Of course,Por supuesto,Tietenkin
+Essential phrases,Don't worry!,No te preocupes!,Älä huoli!
+Essential phrases,So...,Así que... / Entonces...,Joten...
+Essential phrases,Can you help me?,Puedes aydarme?,Voitko auttaa minua?
+Essential phrases,I don't understand,No entiendo,En ymmärrä
+Essential phrases,What does that mean?,Qué significa eso? / Qué quiere decir eso?,Mitä se tarkoittaa?
+Essential phrases,Can you repeat that?,Puede repetir eso?,Voitteko toistaa?
+Interrogatives,Why?,Por qué?,Miksi?
+Interrogatives,Why? (for what purpose),Para qué?,Miksi? (minkä vuoksi)
+Interrogatives,Who?,Quién?,Kuka?
+Interrogatives,What?,Cómo? / Qué?,Mikä?
+Interrogatives,Which?,Cúal?,Kumpi?
+Interrogatives,Where?,Dónde?,Missä?
+Interrogatives,When?,Cuándo?,Milloin?
+Interrogatives,How?,Cómo?,Miten?

@@ -1,20 +1,23 @@
 import { StrictMode } from 'react'
-import App from './containers/App'
+import App, { appElement, appElementId } from './containers/App'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
 import fetchLibrary from './services/cards'
+
 // import reportWebVitals from './reportWebVitals'
 
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 ;(async () => {
   const library = await fetchLibrary()
-  const root = document.getElementById('app')
-  if (root) {
-    ReactDOM.createRoot(root).render(
+  if (appElement) {
+    ReactDOM.createRoot(appElement).render(
       <StrictMode>
         <App {...library} />
       </StrictMode>
     )
+  } else {
+    throw new Error(`Element with id ${appElementId} not found.`)
   }
 })()
 
